@@ -1,0 +1,122 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[top = 2.5cm, bottom = 2.5cm, left = 2.5cm, right = 2.5cm]{geometry}
+% Unfortunately, LaTeX has a hard time interpreting German Umlaute. The following two lines and packages should help. If it doesn't work for you please let me know.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% The following two packages - multirow and booktabs - are needed to create nice looking tables.
+\usepackage{multirow} % Multirow is for tables with multiple rows within one cell.
+\usepackage{booktabs} % For even nicer tables.
+% As we usually want to include some plots (.pdf files) we need a package for that.
+\usepackage{graphicx}
+% The default setting of LaTeX is to indent new paragraphs. This is useful for articles. But not really nice for homework problem sets. The following command sets the indent to 0.
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+\setlength{\parindent}{0in}
+% Package to place figures where you want them.
+\usepackage{float}
+% The fancyhdr package let's us create nice headers.
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\input{structure}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\lhead{\footnotesize Física 3: HT 3}
+\rhead{\footnotesize Rompich}
+\cfoot{\footnotesize \thepage}
+
+\begin{document}
+    \thispagestyle{empty} % This command disables the header on the first page.
+
+    \begin{tabular}{p{15.5cm}} % This is a simple tabular environment to align your text nicely
+    \begin{tabbing}
+    Universidad del Valle de Guatemala \\ 21 de octubre de 2020  \\
+    Rudik R. Rompich\   - Carné: 19857\\
+    \end{tabbing}
+    Física 3 - Ing. Luis Mijangos \\
+    \hline % \hline produces horizontal lines.
+    \\
+    \end{tabular} % Our tabular environment ends here.
+    \vspace*{0.3cm} % Now we want to add some vertical space in between the line and our title.
+    \begin{center} % Everything within the center environment is centered.
+    {\Large \bf HT 3} % <---- Don't forget to put in the right number
+        \vspace{2mm}
+    \end{center}
+    \vspace{0.4cm}
+    
+    
+    
+    
+\textbf{Problem 1}
+The definition of resistivity $\rho=E / J$ where assume $\mathrm{E}$ and $\mathrm{J}$ are in the same direction thus the vector part cancels. It seems that the Electric field is naturally exists inside a conductor, however if you have any measurement devices such as Voltmeter, you do not see any Voltage developed across the two terminals thus no Electric field $(\mathrm{E}=\mathrm{V} / \mathrm{l}) .$ Please explain.\\
+
+La falta de voltaje puede explicarse por definición. Primero la resistividad es muy pequeña en un conductor, es decir, no afecta en gran manera. Por otro lado, no hay diferencia de potencial, entonces no hay corriente y por lo tanto, los electrones no se están moviendo. Es por esto que que no hay campo eléctrico.\\
+
+
+\textbf{Problem 2}
+A cylindrical wire of length $L$ and cross-sectional area A has a resistance $R$. Now if we double the length and triple the Cross-sectional area what could be the new resistance.
+\begin{align}
+    \intertext{Sabemos que:}
+    \mi{R =\frac{\rho L}{A}}\\
+    \intertext{Según el problema, tenemos $2L$ y $3A$, entonces: }
+    \mi{R'&=\frac{\rho(2L)}{3A}}\\
+    \mi{&= \frac{2\rho L}{3A}}\\
+    \mi{&= \frac{2}{3}R}
+    \intertext{La nueva resistencia es $R'= \frac{2}{3}R$.}
+\end{align}
+
+
+\textbf{Problema 3}
+A wire with resistivity $\rho=1.72 \times 10^{-8} \Omega m$ has cross sectional area $=1.5 \times 10^{-7} m^{2}$. The current passing in this wire is 1.5 Ampere. Find the (a) Electric field developed along this wire (b) Potential difference of 100 metre apart and (c) the Resistance of 100 meter wire.
+\begin{align}
+    \intertext{\textbf{(a) El campo eléctrico}}
+    \intertext{Sabemos:}
+    \mi{J=\sigma E} & \frac{1}{\rho} & J=\frac{I}{A}
+    \intertext{Entonces tenemos que:}
+    \mi{\frac{I}{A}=\frac{1}{\rho}E}& \implies E=\rho\frac{I}{A}
+    \intertext{Evaluando E:}
+    \mi{E=(1.72 \times 10^{-8} \Omega m)*\frac{(1.5 A)}{(1.5 \times 10^{-7} m^{2})}= 0.172 \frac{\Omega A}{m}}
+    \mi{}
+    \intertext{\textbf{(b) Diferencia de potencial de 100 metros}}
+    \intertext{Tenemos la ecuación:}
+    \mi{R=\rho\frac{L}{A}=(1.72 \times 10^{-8} \Omega m)\frac{(100m)}{(1.5 \times 10^{-7} m^{2})}=11.47\Omega}
+    \intertext{Entonces tenemos que:}
+    \mi{\Delta V=IR}\\
+    \mi{V=(1.5A)(11.47\Omega)=17.2 V}
+    \intertext{\textbf{(c) Resistencia de 100 metros de la cuerda}}
+    \intertext{Tenemos la ecuación:}
+    \mi{R=\rho\frac{L}{A}=(1.72 \times 10^{-8} \Omega m)\frac{(100m)}{(1.5 \times 10^{-7} m^{2})}=11.47\Omega}
+\end{align}
+
+\textbf{Problem 4}
+A Copper wire with linear resistivity coefficient is $0.00393 C^{\circ-1}$ has a resistance at $0^{\circ} \mathrm{C}$ is $1 \Omega .$ What could be the resistance at $100^{\circ} \mathrm{C}$. What could be percentage of increase of applied voltage $V(=I R)$ for the same currents in the circuit for this two temperatures.
+   
+\begin{align}
+    \intertext{Para encontrar la resistencia en $100^{\circ}$, sabemos que:}
+    \mi{\rho(T)=\rho_0[1+\al\Delta T]}\\
+    \mi{\implies \frac{L}{A}\rho(t)=\frac{L}{A}\rho_0[1+\al\Delta T] }\\
+    \mi{\implies R(T)=R_0[1+\al\Delta T]}\\
+    \mi{R(100^{\circ})=(1\Omega)[1+(0.00393 C^{\circ-1})(100^{\circ}-0^{\circ})]}\\
+    \mi{R(100^{\circ})=1.393\Omega}
+\end{align}\\\\
+\begin{align}
+     \intertext{Para encontrar el porcetaje que se incrementa el voltaje aplicado:}
+     \intertext{Se aplica una regla de 3:}
+     \mi{\frac{\Delta V_0}{R_0}=\frac{\Delta V_{100}}{R_{100}}}\\
+     \mi{\frac{R_{100}}{R_0}=\frac{\Delta V_{100}}{V_{0}}}\\
+     \mi{\frac{R_{100}}{R_0}=\frac{1.393\Omega}{1\Omega}}\\
+     \mi{\frac{R_{100}}{R_0}=1.393}
+     \intertext{Entonces:}
+     \mi{\% \Delta=1.393-1=0.393=39.2\%}
+\end{align}
+    
+    
+
+
+    \end{document}
